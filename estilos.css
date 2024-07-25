@@ -1,0 +1,650 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("assets/fondoPagina.jpg"); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen en el fondo */
+  background-attachment: fixed; /* Hace que la imagen quede fija al hacer scroll */
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+header {
+  background: linear-gradient(45deg, #f5d1ce, #9ca0a0);
+  text-align: center;
+}
+
+.navbar {
+  background-color: #eeeeee;
+  box-shadow: 4px 2px 10px #444;
+  position: sticky; /* Hace que el navbar sea sticky */
+  top: 0; /* Se queda en la parte superior */
+  z-index: 1000; /* Asegura que esté sobre otros elementos */
+  width: 100%;
+}
+.carousel-container {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  overflow: hidden; /* Oculta partes del contenido que desborden */
+  position: relative; /* Para posicionamiento relativo */
+}
+
+.carousel {
+  display: flex; /* Alineación en fila de los elementos */
+  transition: transform 0.5s ease; /* Animación de transición */
+}
+
+.carousel-item {
+  min-width: 100%; /* Cada elemento ocupa el ancho completo */
+  overflow: hidden; /* Oculta partes del contenido que desborden */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  box-shadow: 4px 4px 20px #444;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.imgCaroucel1 {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  object-fit: cover; /* La imagen cubre el área del contenedor */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 85%,
+    50% 100%,
+    0 85%
+  ); /* Forma de pico en la parte inferior */
+}
+
+.informacion {
+  background: linear-gradient(
+    135deg,
+    #be6464,
+    #182848
+  ); /* Fondo con gradiente */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  color: #ffffff; /* Texto en color blanco */
+  padding: 40px; /* Espaciado interno */
+  max-width: 600px; /* Ancho máximo del contenido */
+  margin: 40px; /* Margen exterior */
+  margin-top: 40px;
+}
+
+.infTitulo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: "Arial", sans-serif; /* Tipografía moderna */
+  font-size: 3rem; /* Tamaño de fuente grande */
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff; /* Color del texto */
+  background: linear-gradient(
+    135deg,
+    rgba(184, 183, 183, 0.8),
+    rgb(109, 109, 109)
+  ); /* Gradiente con opacidad para efecto difuminado */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Sombra del texto para legibilidad */
+  margin: 20px; /* Margen para separación */
+  backdrop-filter: blur(8px); /* Difuminado del fondo detrás del h1 */
+  -webkit-backdrop-filter: blur(
+    8px
+  ); /* Compatibilidad con navegadores basados en WebKit */
+}
+
+h2 {
+  font-family: "Arial", sans-serif; /* Tipografía moderna */
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff; /* Color del texto */
+  background: linear-gradient(
+    135deg,
+    #be6464,
+    #182848
+  ); /* Gradiente de fondo */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Sombra del texto para legibilidad */
+  margin: 20px 0; /* Margen vertical para separación */
+  backdrop-filter: blur(5px); /* Difuminado del fondo detrás del h2 */
+  -webkit-backdrop-filter: blur(
+    5px
+  ); /* Compatibilidad con navegadores basados en WebKit */
+  position: relative; /* Necesario para los pseudo-elementos */
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Efecto de difuminado */
+  border-radius: 15px; /* Mismo radio de borde que el h2 */
+  z-index: -1; /* Asegura que el pseudo-elemento quede detrás del h2 */
+  filter: blur(6px); /* Difuminado del fondo */
+}
+
+h3 {
+  font-size: 2rem;
+  padding: 1rem;
+  font-family: "Arial", sans-serif; /* Tipografía moderna */
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  font-weight: bold;
+  text-align: center;
+  color: #363333; /* Color del texto */
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+.Logo img {
+  width: 200px;
+}
+
+.card {
+  margin: 2rem;
+  background: linear-gradient(45deg, #ff6f61, #3aabb8);
+  color: white;
+  border-radius: 8px 8px 25px 25px;
+  width: 25rem;
+  box-shadow: 10px 4px 30px #444;
+  overflow: hidden; /* Asegura que el contenido extra no se desborde */
+  transition: transform 0.2s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+  max-height: 400px; /* Máxima altura para mantener la proporción */
+  object-fit: cover; /* Cubre el área de la tarjeta sin distorsionar */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: transform 0.2s ease-in-out;
+}
+
+.card li {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel2 {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item img {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+}
+
+#closeCarouselButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#toggleButton55,
+#toggleButton9 {
+  background-color: rgb(
+    227,
+    252,
+    206
+  ); /* Elimina el fondo predeterminado del botón */
+  border: none; /* Elimina el borde predeterminado del botón */
+  border-radius: 2rem;
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  padding: 0.5rem 1rem; /* Agrega algo de espacio alrededor del contenido */
+  display: flex; /* Usa flexbox para alinear los iconos y el texto */
+  align-items: center; /* Alinea verticalmente el contenido */
+  font-size: 18px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  color: rgba(49, 136, 22, 0.671);
+}
+
+#toggleButton55 img,
+#toggleButton9 img {
+  width: 20px; /* Ajusta el tamaño del icono */
+  height: auto; /* Mantiene la proporción del icono */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+@media (min-width: 768px) {
+  header {
+    background: linear-gradient(45deg, #ff6f61, #3aabb8);
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+  }
+
+  h1 {
+    padding: 3rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  h5 {
+    font-size: 9rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
+
+  .informacion {
+    background: linear-gradient(
+      135deg,
+      #4b6cb7,
+      #182848
+    ); /* Fondo con gradiente */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    color: #ffffff; /* Texto en color blanco */
+    padding: 40px; /* Espaciado interno */
+    width: 90%; /* Ancho del div */
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: 40px auto;
+  }
+
+  .informacion p {
+    font-size: 1.5rem; /* Tamaño del texto */
+    line-height: 1.8; /* Altura de línea */
+  }
+
+  .infTitulo {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    background: linear-gradient(45deg, #ff6f61, #3aabb8);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: calc(33.333% - 20px); /* Tres tarjetas por fila con un margen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para que la imagen no se desborde de la tarjeta */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* La imagen cubre el área de la tarjeta sin distorsionarse */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre imagen y contenido */
+  }
+
+  #Sabanas img {
+    width: 100%;
+    height: 500px; /* Altura fija para todas las imágenes */
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 15px;
+    flex-grow: 1; /* Permite que el contenido de la tarjeta crezca y ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-body h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-body p {
+    margin-bottom: 15px;
+    color: #fff;
+    flex-grow: 1; /* Hace que el párrafo ocupe el espacio restante en el cuerpo de la tarjeta */
+  }
+
+  .card-body button {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-body button:hover {
+    background-color: #ff6f61;
+    color: #fff;
+  }
+  /* Asegúrate de que el contenedor del carrusel ocupe todo el ancho de la pantalla */
+  .carousel-container {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  /* Configura las imágenes del carrusel para que se ajusten correctamente */
+  .carousel-item img.imgCaroucel1 {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    max-height: 750px; /* Limita la altura máxima de las imágenes */
+  }
+
+  /* Asegúrate de que el carrusel ocupe todo el ancho de la pantalla */
+  .carousel {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Agrega una punta decorativa debajo del carrusel */
+  .carousel-container::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 10px solid #000; /* Cambia el color según tu preferencia */
+    margin: 0 auto;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .carousel2 {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    position: relative;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    object-fit: cover;
+  }
+
+  /* Asegura que los botones se vean bien en PC */
+  #toggleButton55,
+  #toggleButton9 {
+    background-color: white; /* Elimina el fondo predeterminado del botón */
+    border: none; /* Elimina el borde predeterminado del botón */
+    border-radius: 2rem;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    padding: 0.5rem 1rem; /* Agrega algo de espacio alrededor del contenido */
+    display: flex; /* Usa flexbox para alinear los iconos y el texto */
+    align-items: center; /* Alinea verticalmente el contenido */
+    font-size: 18px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    color: rgba(49, 136, 22, 0.671);
+  }
+
+  #toggleButton55 img,
+  #toggleButton9 img {
+    width: 20px; /* Ajusta el tamaño del icono */
+    height: auto; /* Mantiene la proporción del icono */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+  }
+
+  footer {
+    background: linear-gradient(45deg, #ff6f61, #3aabb8);
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-media a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+  }
+
+  .social-media a:hover .social-icon {
+    transform: scale(1.1);
+  }
+
+  .social-media a:hover {
+    color: #ffeb3b;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #fff;
+    padding-top: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .social-media {
+    flex-direction: row;
+  }
+
+  .social-media a {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #c3ccc4;
+  color: rgb(14, 14, 14);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#toggleButton1,
+#toggleButton2,
+#toggleButton3,
+#toggleButton4,
+#toggleButton5,
+#toggleButton6,
+#toggleButton7,
+#toggleButton8,
+#toggleButton9 {
+  transition: 0.3s;
+}
+
+#toggleButton1:hover,
+#toggleButton2:hover,
+#toggleButton3:hover,
+#toggleButton4:hover,
+#toggleButton5:hover,
+#toggleButton6:hover,
+#toggleButton7:hover,
+#toggleButton8:hover,
+#toggleButton9:hover {
+  padding: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px 0;
+}
+
+footer {
+  background: linear-gradient(45deg, #ff6f61, #3aabb8);
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s;
+}
+
+.social-media a:hover .social-icon {
+  transform: scale(1.3);
+}
+
+.social-media a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  border-top: 1px solid #fff;
+  padding-top: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.social-media a {
+  font-size: 0.8rem;
+}
+
+.social-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+}
